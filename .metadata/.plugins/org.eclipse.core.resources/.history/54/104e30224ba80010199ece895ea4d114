@@ -1,0 +1,5 @@
+package com.dev.entity;
+
+public class Order {
+
+}

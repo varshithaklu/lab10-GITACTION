@@ -1,0 +1,71 @@
+package com.dev.entity;
+
+import jakarta.persistence.*;
+import java.time.LocalDate;
+
+@Entity
+@Table(name = "order_table")
+public class Order 
+{
+    @Id
+    private Long id; // random-generated manually
+
+    @Column(nullable = false)
+    private String title; // Order Title
+
+    @Column(nullable = false)
+    private String description; // Description
+
+    @Column(nullable = false)
+    private LocalDate orderDate; // Order Date
+
+    @Column(nullable = false)
+    private LocalDate deliveryDate; // Delivery Date
+
+    @Column(nullable = false)
+    private Integer quantity; // Quantity
+
+    @Column(nullable = false)
+    private Double price; // Price
+
+   
+
+    @Column(nullable = false)
+    private String status;
+
+  
+
+    public Order() 
+    {
+        // Random ID on creation
+        this.id = (long) (Math.random() * 100000);
+    }
+
+    // Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
+
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+
+    public LocalDate getOrderDate() { return orderDate; }
+    public void setOrderDate(LocalDate orderDate) { this.orderDate = orderDate; }
+
+    public LocalDate getDeliveryDate() { return deliveryDate; }
+    public void setDeliveryDate(LocalDate deliveryDate) { this.deliveryDate = deliveryDate; }
+
+    public Integer getQuantity() { return quantity; }
+    public void setQuantity(Integer quantity) { this.quantity = quantity; }
+
+    public Double getPrice() { return price; }
+    public void setPrice(Double price) { this.price = price; }
+
+    public Priority getPriority() { return priority; }
+    public void setPriority(Priority priority) { this.priority = priority; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+}
